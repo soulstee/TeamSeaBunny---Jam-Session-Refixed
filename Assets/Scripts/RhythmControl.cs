@@ -33,9 +33,9 @@ public class RhythmControl : MonoBehaviour
 
     void CheckNotes(TrackType trackNum){
         for(int i = 0; i < activeNotes.Count; i++){
-                if(activeNotes[i].vel*activeNotes[i].timer > activeNotes[i].dist-tolerance && activeNotes[i].vel*activeNotes[i].timer < activeNotes[i].dist+tolerance){
-                    activeNotes[i].Hit();
-            }
+                //if(activeNotes[i].vel*activeNotes[i].timer > activeNotes[i].dist-tolerance && activeNotes[i].vel*activeNotes[i].timer < activeNotes[i].dist+tolerance){
+                //    activeNotes[i].Hit();
+            //}
         }
     }
 }
