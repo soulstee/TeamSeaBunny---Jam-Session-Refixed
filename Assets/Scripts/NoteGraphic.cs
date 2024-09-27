@@ -8,7 +8,6 @@ public class NoteGraphic : MonoBehaviour
     private AudioManager audio;
     public TrackType track;
     public float speed = 4f;
-    private float noteDelay;
     public float dist;
     public float vel;
     Vector2 movement;
@@ -31,19 +30,13 @@ public class NoteGraphic : MonoBehaviour
         RhythmControl.activeNotes.Add(this);
         RhythmControl.UpdateNotes();
         target = targ;
-        noteDelay = _noteDelay;
-        SetMovement();
-    }
-
-    private void SetMovement(){
-        dist = Vector2.Distance(transform.position, target.position);
-        vel = dist/(noteDelay);
-
-        movement = new Vector2(target.position.x, target.position.y).normalized;
     }
 
     private void Update(){
-        if(!spawned && AudioManager.timer >= note.StartTime+audio.delay-noteDelay){
+        if(!spawned && AudioManager.timer >= note.StartTime+audio.delay-audio.noteDelay){
+            dist = Vector2.Distance(transform.position, target.position);
+            vel = dist/(audio.noteDelay);
+            movement = new Vector2(target.position.x, target.position.y).normalized;
             spawned = true;
             renderer.enabled = true;
         }
@@ -52,7 +45,7 @@ public class NoteGraphic : MonoBehaviour
             transform.Translate(movement * vel * Time.deltaTime);
         }
 
-        if(!missed && vel*(audio.source.time - note.StartTime) >= dist+RhythmControl.tolerance){
+        if(!missed && vel*(audio.source.time - note.StartTime) > dist+RhythmControl.tolerance){
             Miss();
         }
     }

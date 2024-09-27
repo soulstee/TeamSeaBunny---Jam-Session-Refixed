@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public Transform[] targets;
     public AudioSource source;
     public float delay;
+    [Range(0.1f,10f)]
     public float noteDelay;
     int currentNote;
 
@@ -56,6 +57,10 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Update(){
+
+        if(Input.GetKeyDown(KeyCode.K)){
+            noteDelay/=2;
+        }
 
         if(startTime){
             timer+=Time.deltaTime;

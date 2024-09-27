@@ -6,13 +6,14 @@ public class RhythmControl : MonoBehaviour
 {
     public static List<NoteGraphic> activeNotes = new List<NoteGraphic>();
     public static TrackKey[] keyLists = new TrackKey[3];
+    AudioManager manager;
 
     public static float tolerance = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GetComponent<AudioManager>();
     }
 
     public static void UpdateNotes(){
@@ -32,11 +33,7 @@ public class RhythmControl : MonoBehaviour
     }
 
     void CheckNotes(TrackType trackNum){
-        for(int i = 0; i < activeNotes.Count; i++){
-                //if(activeNotes[i].vel*activeNotes[i].timer > activeNotes[i].dist-tolerance && activeNotes[i].vel*activeNotes[i].timer < activeNotes[i].dist+tolerance){
-                //    activeNotes[i].Hit();
-            //}
-        }
+        
     }
 }
 
