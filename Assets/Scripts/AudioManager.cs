@@ -10,64 +10,59 @@ public class AudioManager : MonoBehaviour
     public Transform[] targets;
     public AudioSource source;
     public float delay;
-    [Range(0.1f,10f)]
     public float noteDelay;
     int currentNote;
 
     bool startTime = false;
     bool delayDone = false;
-    public static float timer;
+    float timer;
     float timePlayed;
     float avgNoteLength;
 
-    public void Setup(){
+    private void Start(){
+        
+    }
+
+    public void StartSong(){
+        timer = 0-delay;
+        startTime = true;
+        Debug.Log("Start");
+        source.Play();
         float num = 0f;
         foreach(var note in notes){
             num+=note.Length;
         }
-        avgNoteLength = num/notes.Count;
-
-        for(int i = 0; i < notes.Count; i++){
-            Transform targ = null;
-            int targID = 0;
-            GameObject obj = Instantiate(test, Vector3.zero, Quaternion.identity);
-            if(notes[i].Length <= avgNoteLength){
-                targ = targets[0];
-                obj.GetComponent<SpriteRenderer>().color = Color.blue;
-            }else if(notes[i].Length > avgNoteLength && notes[i].Length < avgNoteLength*1.5f){
-                targ = targets[1];
-                targID = 1;
-                obj.GetComponent<SpriteRenderer>().color = Color.red;
-            }else if(notes[i].Length >= avgNoteLength*1.5f){
-                targ = targets[2];
-                targID = 2;
-                obj.GetComponent<SpriteRenderer>().color = Color.green;
-            }
-            obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[i], this, targ, targID, noteDelay);
-            startTime = true;
-        }
-    }
-
-    public void StartSong(){
-        Debug.Log("Start");
-        source.Play();
-
-        Debug.Log(notes[notes.Count-1].StartTime);
-        Debug.Log(source.clip.length);
+        avgNoteLength = num/notes.Count;//Avg length of all notes
     }
 
     private void Update(){
 
-        if(Input.GetKeyDown(KeyCode.K)){
-            noteDelay/=2;
-        }
-
         if(startTime){
             timer+=Time.deltaTime;
             
-            if(timer >= delay && !delayDone){
-                StartSong();
+            if(timer >= 0 && !delayDone){
                 delayDone = true;
+            }
+
+            if(timer >= notes[currentNote].StartTime-noteDelay && !notes[currentNote].played && !notes[currentNote].active){
+                    Transform targ = null;
+                    int targID = 0;
+                    notes[currentNote].active = true;
+                    GameObject obj = Instantiate(test, Vector3.zero, Quaternion.identity);
+                    if(notes[currentNote].Length <= avgNoteLength){
+                        targ = targets[0];
+                        obj.GetComponent<SpriteRenderer>().color = Color.blue;
+                    }else if(notes[currentNote].Length > avgNoteLength && notes[currentNote].Length < avgNoteLength*1.5f){
+                        targ = targets[1];
+                        targID = 1;
+                        obj.GetComponent<SpriteRenderer>().color = Color.red;
+                    }else if(notes[currentNote].Length >= avgNoteLength*1.5f){
+                        targ = targets[2];
+                        targID = 2;
+                        obj.GetComponent<SpriteRenderer>().color = Color.green;
+                    }
+                    obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[currentNote].Length, targ, targID, noteDelay);
+                    currentNote++;
             }
         }
     }

@@ -4,48 +4,47 @@ using UnityEngine;
 
 public class NoteGraphic : MonoBehaviour
 {
-    private MidiNote note;
-    private AudioManager audio;
     public TrackType track;
     public float speed = 4f;
+    private float noteDelay;
+    private float length;
+    private float angle;
     public float dist;
     public float vel;
     Vector2 movement;
     Rigidbody2D rb;
     SpriteRenderer renderer;
     public Transform target;
+    public float timer = 0;
     bool missed = false;
-    bool spawned = false;
 
     void Awake(){
         renderer = GetComponent<SpriteRenderer>();
-        renderer.enabled = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void InitializeOnSpawn(MidiNote _note, AudioManager _manager, Transform targ, int _track, float _noteDelay){
-        audio = _manager;
-        note = _note;
+    public void InitializeOnSpawn(float _length, Transform targ, int _track, float _noteDelay){
         track = (TrackType)_track;
         RhythmControl.activeNotes.Add(this);
         RhythmControl.UpdateNotes();
+        length = _length;
         target = targ;
+        noteDelay = _noteDelay;
+        SetMovement();
     }
 
-    private void Update(){
-        if(!spawned && AudioManager.timer >= note.StartTime+audio.delay-audio.noteDelay){
-            dist = Vector2.Distance(transform.position, target.position);
-            vel = dist/(audio.noteDelay);
-            movement = new Vector2(target.position.x, target.position.y).normalized;
-            spawned = true;
-            renderer.enabled = true;
-        }
-        
-        if(spawned){
-            transform.Translate(movement * vel * Time.deltaTime);
-        }
+    private void SetMovement(){
+        dist = Vector2.Distance(transform.position, target.position);
+        vel = dist/(length+noteDelay);
 
-        if(!missed && vel*(audio.source.time - note.StartTime) > dist+RhythmControl.tolerance){
+        movement = new Vector2(target.position.x, target.position.y);
+    }
+
+    private void FixedUpdate(){
+        timer += Time.deltaTime;
+        transform.Translate(movement * vel * Time.deltaTime);
+
+        if(!missed && vel*timer >= dist+RhythmControl.tolerance){
             Miss();
         }
     }
