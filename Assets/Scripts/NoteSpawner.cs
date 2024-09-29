@@ -41,7 +41,7 @@ public class NoteSpawner : MonoBehaviour
 
     private void SpawnRandomNote()
     {
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = (int)Random.Range(0, 3);
         GameObject noteToSpawn = null;
         GameObject target = null;
         GameObject missZone = null;
