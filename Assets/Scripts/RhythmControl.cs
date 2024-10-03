@@ -73,10 +73,11 @@ public class RhythmControl : MonoBehaviour
             }else if(Input.GetKeyUp(keyLists[key].code)){
                 keyLists[key].down = false;
                 foreach(var note in keyLists[key].notesInKey){
-                    if(note != null && note.type == NoteType.Length && note.spawned && note.CheckChildDist() <= tolerance){
+                    if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned && note.CheckChildDist() <= tolerance){
                         note.Hit();
                     }else if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned){
                         note.FailedFollowingNote();
+                        note.SetRenderer(true);
                     }
                 }
             }

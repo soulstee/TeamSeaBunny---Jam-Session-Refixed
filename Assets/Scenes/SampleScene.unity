@@ -393,7 +393,7 @@ MonoBehaviour:
   - {fileID: 563304413}
   source: {fileID: 208681437}
   delay: 3
-  noteDelay: 3
+  noteDelay: 4
 --- !u!1 &220167340
 GameObject:
   m_ObjectHideFlags: 0

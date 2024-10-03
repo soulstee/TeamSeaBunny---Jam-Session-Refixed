@@ -12,7 +12,6 @@ public class NoteGraphic : MonoBehaviour
     [HideInInspector]
     public float vel;
     Vector2 movement;
-    Rigidbody2D rb;
     SpriteRenderer renderer;
 
     [Header("Length Note")]
@@ -31,7 +30,6 @@ public class NoteGraphic : MonoBehaviour
 
     void Awake(){
         renderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     GameObject lengthChild;
@@ -115,6 +113,10 @@ public class NoteGraphic : MonoBehaviour
         return following;
     }
 
+    public bool CheckMissed(){
+        return missed;
+    }
+
     public void FailedFollowingNote(){
         renderer.enabled = true;
         failedFollow = true;
@@ -125,6 +127,10 @@ public class NoteGraphic : MonoBehaviour
         return Vector2.Distance(transform.position, lengthChild.transform.position);
     }
 
+    public void SetRenderer(bool set){
+        renderer.enabled = set;
+    }
+
     public float TimeExisted(){
         return (audio.source.time - note.StartTime);
     }
@@ -133,10 +139,10 @@ public class NoteGraphic : MonoBehaviour
         Debug.Log("Hit");
         if(type == NoteType.Normal){
             Destroy(0f);}
-        else if(type == NoteType.Length && !hit){
+        else if(type == NoteType.Length && !hit && renderer.enabled){
             hit = true;
             renderer.enabled = false;
-        }else if(type == NoteType.Length && hit){
+        }else if(type == NoteType.Length && hit && !renderer.enabled){
             Destroy(lengthChild);
             Destroy(0f);
         }
@@ -144,9 +150,11 @@ public class NoteGraphic : MonoBehaviour
 
     public void Miss(){
         missed = true;
-        Destroy(5f);
         if(lengthChild != null){
+            Destroy(5f + note.Length);
             Destroy(lengthChild, 5f+note.Length);
+        }else{
+            Destroy(5f);
         }
     }
 }
