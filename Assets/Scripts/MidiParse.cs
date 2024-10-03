@@ -16,7 +16,7 @@ public class MidiParse : MonoBehaviour
     void Awake()
     {
         manager = GetComponent<AudioManager>();
-        ParseMidiFile(midiFilePath);
+        ParseMidiFile(Path.Combine(Application.streamingAssetsPath, midiFilePath));
     }
 
     private void ParseMidiFile(string path)

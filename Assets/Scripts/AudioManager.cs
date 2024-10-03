@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     float avgNoteLength;
 
     private void Awake(){
+
         delay = noteDelay+3f;
     }
 
@@ -34,24 +35,20 @@ public class AudioManager : MonoBehaviour
         avgNoteLength = num/notes.Count;
 
         for(int i = 0; i < notes.Count; i++){
-            Transform targ = null;
-            int targID = 0;
+            int pos = (int)Random.Range(0, targets.Length);
+            Transform targ = targets[pos];
             GameObject obj = Instantiate(test, Vector3.zero, Quaternion.identity);
-        if(notes[i].Length <= avgNoteLength){
-            targ = targets[0];
-            obj.GetComponent<SpriteRenderer>().color = Color.blue;
-        }else if(notes[i].Length > avgNoteLength && notes[i].Length < avgNoteLength*1.5f){
-            targ = targets[1];
-            targID = 1;
-            obj.GetComponent<SpriteRenderer>().color = Color.red;
-        }else if(notes[i].Length >= avgNoteLength*1.5f){
-            targ = targets[2];
-            targID = 2;
+        if(notes[i].Length >= avgNoteLength*1.5f){
             obj.GetComponent<SpriteRenderer>().color = Color.green;
+            obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[i], this, targ, noteDelay, NoteType.Length);
+        }else{
+            obj.GetComponent<SpriteRenderer>().color = Color.blue;
+            obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[i], this, targ, noteDelay, NoteType.Normal);
         }
-        obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[i], this, targ, targID, noteDelay);
         startTime = true;
         }
+        
+        RhythmControl.SetNotes();
     }
 
     public void StartSong(){
@@ -59,10 +56,6 @@ public class AudioManager : MonoBehaviour
     }
 
     private void Update(){
-
-        if(Input.GetKeyDown(KeyCode.K)){
-            noteDelay/=2;
-        }
 
         if(timer >= delay && !delayDone){
             StartSong();
@@ -72,8 +65,8 @@ public class AudioManager : MonoBehaviour
         if(startTime){
             timer+=Time.deltaTime;
 
-            if((int)(delay-noteDelay-timer) > 0){
-                text.text = ((int)(delay-noteDelay-timer)).ToString();
+            if((delay-noteDelay-timer) > 0){
+                text.text = (Mathf.Round((delay-noteDelay-timer)*10f)*0.1f).ToString();
             }else{
                 text.text = "";
             }
