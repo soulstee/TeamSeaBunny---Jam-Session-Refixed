@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TeamSeaBunny---Jam-Session-Refixed-main.sln"
+    "dotnet.defaultSolution": "TeamSeaBunny---Jam-Session-Refixed.sln"
 }

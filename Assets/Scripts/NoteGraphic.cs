@@ -5,14 +5,14 @@ using UnityEngine;
 public class NoteGraphic : MonoBehaviour
 {
     private MidiNote note;
-    private AudioManager audio;
+    private new AudioManager audio; // Hiding the inherited member
     public NoteType type = NoteType.Normal;
     [HideInInspector]
     public float dist;
     [HideInInspector]
     public float vel;
     Vector2 movement;
-    SpriteRenderer renderer;
+    private new SpriteRenderer renderer; // Hiding the inherited member
 
     [Header("Length Note")]
     public Sprite lengthNoteSprite;
@@ -28,7 +28,8 @@ public class NoteGraphic : MonoBehaviour
     public bool spawned = false;
     bool initialized = false;
 
-    void Awake(){
+    void Awake()
+    {
         renderer = GetComponent<SpriteRenderer>();
     }
 
@@ -37,14 +38,16 @@ public class NoteGraphic : MonoBehaviour
     bool following = false;
     bool failedFollow = false;
 
-    public void InitializeOnSpawn(MidiNote _note, AudioManager _manager, Transform targ, float _noteDelay, NoteType _type){
+    public void InitializeOnSpawn(MidiNote _note, AudioManager _manager, Transform targ, float _noteDelay, NoteType _type)
+    {
         audio = _manager;
         note = _note;
         RhythmControl.activeNotes.Add(this);
         target = targ;
         type = _type;
 
-        if(type == NoteType.Length){
+        if (type == NoteType.Length)
+        {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
             lineRenderer.material = lineMaterial;
             lineRenderer.colorGradient = lineColor;
@@ -53,8 +56,8 @@ public class NoteGraphic : MonoBehaviour
             renderer.sprite = lengthNoteSprite;
             lengthChild = Instantiate(gameObject, transform.position, transform.rotation);
             lengthChild.name = "LengthChild";
-            if(lengthChild.GetComponent<SpriteRenderer>() == null)
-            lengthChild.AddComponent<SpriteRenderer>().sprite = lengthNoteSprite;
+            if (lengthChild.GetComponent<SpriteRenderer>() == null)
+                lengthChild.AddComponent<SpriteRenderer>().sprite = lengthNoteSprite;
             lengthChild.GetComponent<SpriteRenderer>().enabled = false;
         }
         initialized = true;
@@ -62,30 +65,39 @@ public class NoteGraphic : MonoBehaviour
 
     float childDist;
 
-    private void Update(){
-        if(initialized && !spawned && AudioManager.timer >= note.StartTime+audio.delay-audio.noteDelay){
+    private void Update()
+    {
+        if (initialized && !spawned && AudioManager.timer >= note.StartTime + audio.delay - audio.noteDelay)
+        {
             dist = Vector2.Distance(transform.position, target.position);
-            vel = dist/(audio.noteDelay);
+            vel = dist / (audio.noteDelay);
             movement = new Vector2(target.position.x, target.position.y).normalized;
             spawned = true;
             renderer.enabled = true;
 
-            if(type == NoteType.Length){
+            if (type == NoteType.Length)
+            {
                 lengthChild.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-        
-        if(spawned && initialized){
 
-            if(!hit || failedFollow)
+        if (spawned && initialized)
+        {
+
+            if (!hit || failedFollow)
                 transform.Translate(movement * vel * Time.deltaTime);
 
-            if(type == NoteType.Length){
-                if(following || failedFollow){
+            if (type == NoteType.Length)
+            {
+                if (following || failedFollow)
+                {
                     lengthChild.transform.Translate(movement * vel * Time.deltaTime);
-                }else{
+                }
+                else
+                {
                     childDist = Vector2.Distance(transform.position, lengthChild.transform.position);
-                    if(childDist > note.Length){
+                    if (childDist > note.Length)
+                    {
                         following = true;
                     }
                 }
@@ -95,72 +107,92 @@ public class NoteGraphic : MonoBehaviour
             }
         }
 
-        if(spawned && !missed && vel*(audio.source.time - note.StartTime) > dist+RhythmControl.tolerance){
+        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > dist + RhythmControl.tolerance)
+        {
             Miss();
         }
     }
 
-    private void Destroy(float _time){
+    private void Destroy(float _time)
+    {
         RhythmControl.activeNotes.Remove(this);
         Destroy(this.gameObject, _time);
     }
 
-    public float CheckNoteDist(){
+    public float CheckNoteDist()
+    {
         return Vector2.Distance(transform.position, target.position);
     }
 
-    public bool CheckFollowing(){
+    public bool CheckFollowing()
+    {
         return following;
     }
 
-    public bool CheckMissed(){
+    public bool CheckMissed()
+    {
         return missed;
     }
 
-    public void FailedFollowingNote(){
+    public void FailedFollowingNote()
+    {
         renderer.enabled = true;
         failedFollow = true;
         Miss();
     }
 
-    public float CheckChildDist(){
+    public float CheckChildDist()
+    {
         return Vector2.Distance(transform.position, lengthChild.transform.position);
     }
 
-    public void SetRenderer(bool set){
+    public void SetRenderer(bool set)
+    {
         renderer.enabled = set;
     }
 
-    public float TimeExisted(){
+    public float TimeExisted()
+    {
         return (audio.source.time - note.StartTime);
     }
 
-    public void Hit(){
+    public void Hit()
+    {
         Debug.Log("Hit");
-        if(type == NoteType.Normal){
-            Destroy(0f);}
-        else if(type == NoteType.Length && !hit && renderer.enabled){
+        if (type == NoteType.Normal)
+        {
+            Destroy(0f);
+        }
+        else if (type == NoteType.Length && !hit && renderer.enabled)
+        {
             hit = true;
             renderer.enabled = false;
-        }else if(type == NoteType.Length && hit && !renderer.enabled){
+        }
+        else if (type == NoteType.Length && hit && !renderer.enabled)
+        {
             Destroy(lengthChild);
             Destroy(0f);
         }
     }
 
-    public void Miss(){
+    public void Miss()
+    {
         missed = true;
-        if(lengthChild != null){
+        if (lengthChild != null)
+        {
             Destroy(5f + note.Length);
-            Destroy(lengthChild, 5f+note.Length);
-        }else{
+            Destroy(lengthChild, 5f + note.Length);
+        }
+        else
+        {
             Destroy(5f);
         }
     }
 }
 
-public enum NoteType{
-    
+public enum NoteType
+{
+
     Normal,
     Length,
 }
