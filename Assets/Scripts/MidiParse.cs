@@ -9,14 +9,14 @@ public class MidiParse : MonoBehaviour
 {
     public static List<MidiNote> notes = new List<MidiNote>();
     [SerializeField] private string midiFilePath;
-    [SerializeField] private float tempo = 120f; //Default bpm on MIDI
+    [SerializeField] private float bpm = 120f; //Default bpm on MIDI
 
     AudioManager manager;
 
-    void Start()
+    void Awake()
     {
         manager = GetComponent<AudioManager>();
-        ParseMidiFile(midiFilePath);
+        ParseMidiFile(Path.Combine(Application.streamingAssetsPath, midiFilePath));
     }
 
     private void ParseMidiFile(string path)
@@ -25,7 +25,7 @@ public class MidiParse : MonoBehaviour
         Dictionary<int, float> noteStartTimes = new Dictionary<int, float>();
 
         float ticksPerBeat = 480f; //MIDI file default TPB
-        float secondsPerBeat = 60f / tempo; //BPM
+        float secondsPerBeat = bpm / 60; 
         float secondsPerTick = secondsPerBeat / ticksPerBeat;
 
         foreach (var trackChunk in midiFile.GetTrackChunks())
@@ -69,7 +69,7 @@ public class MidiParse : MonoBehaviour
         }
 
         AudioManager.notes = notes;
-        manager.StartSong();
+        manager.Setup();
     }
 }
 
