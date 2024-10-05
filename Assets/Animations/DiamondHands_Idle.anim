@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Idle
+  m_Name: DiamondHands_Idle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: ce30b3f2717b6b84c94be6f208e18e2b, type: 3}
+      value: {fileID: 21300000, guid: 28eb0409d54095f4ab5d1730ac592942, type: 3}
+    - time: 0.1
+      value: {fileID: 21300000, guid: 5a69496f5bfc7654684c1836ee820727, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 4263ec8a4c8f4e540bd181b305162ed8, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: a0cf37be4e795fd4693f8214844ff079, type: 3}
+      value: {fileID: 21300000, guid: 28a6d5096ca8e6445919d1b8fa1a5bd3, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ce30b3f2717b6b84c94be6f208e18e2b, type: 3}
-    - {fileID: 21300000, guid: 4263ec8a4c8f4e540bd181b305162ed8, type: 3}
-    - {fileID: 21300000, guid: a0cf37be4e795fd4693f8214844ff079, type: 3}
+    - {fileID: 21300000, guid: 28eb0409d54095f4ab5d1730ac592942, type: 3}
+    - {fileID: 21300000, guid: 5a69496f5bfc7654684c1836ee820727, type: 3}
+    - {fileID: 21300000, guid: 28a6d5096ca8e6445919d1b8fa1a5bd3, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
