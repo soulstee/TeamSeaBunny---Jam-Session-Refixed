@@ -18,6 +18,15 @@ public class TutorialTextNavigation : MonoBehaviour
         ShowDialogueLine(currentDialogueIndex);
     }
 
+    void Update(){
+        if(Input.GetKeyDown("right")){
+            NextText();
+        }
+        if(Input.GetKeyDown("left")){
+            PreviousText();
+        }
+    }
+
     public void NextText()
     {
         // Only go to the next line if there is one available

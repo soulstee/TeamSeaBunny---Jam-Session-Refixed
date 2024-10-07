@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 563304413}
   source: {fileID: 208681437}
   delay: 3
-  noteDelay: 5
+  noteDelay: 7
 --- !u!114 &208681441
 MonoBehaviour:
   m_ObjectHideFlags: 0
