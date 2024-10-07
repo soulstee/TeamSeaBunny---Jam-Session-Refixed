@@ -12,9 +12,13 @@ public class RhythmControl : MonoBehaviour
 
     public static float tolerance = 0.4f;
 
+    PlayerScore scoreScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        scoreScript = GetComponent<PlayerScore>();
+
         for(int i = 0; i < keyText.Length; i++){
             keyText[i].text = Data.keys[i].ToString();
         }
@@ -67,14 +71,14 @@ public class RhythmControl : MonoBehaviour
                 keyLists[key].down = true;
                 foreach(var note in keyLists[key].notesInKey){
                     if(note != null && note.spawned && note.CheckNoteDist() <= tolerance){
-                        note.Hit();
+                        note.Hit(tolerance-note.CheckNoteDist(), scoreScript);
                     }
                 }
             }else if(Input.GetKeyUp(keyLists[key].code)){
                 keyLists[key].down = false;
                 foreach(var note in keyLists[key].notesInKey){
                     if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned && note.CheckChildDist() <= tolerance){
-                        note.Hit();
+                        note.Hit(tolerance-note.CheckNoteDist(), scoreScript);
                     }else if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned){
                         note.FailedFollowingNote();
                         note.SetRenderer(true);

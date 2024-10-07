@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerScore : MonoBehaviour
 {
 
-    public static int scoreValue = 0;
-    Text score;
+    public TextMeshProUGUI scoreText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        score = GetComponent<Text>();  // Fetch the Text component attached to the GameObject
+    public static float score = 0;
+    public static float accuracy;
+    public static float totalScore;
+
+    public void SetScore(float add){
+        score += add;
+        UpdateScoreText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        score.text = "Score: " + scoreValue;  // Update the text property of the Text component
+    public void UpdateScoreText(){
+        scoreText.text = score.ToString();
     }
 }

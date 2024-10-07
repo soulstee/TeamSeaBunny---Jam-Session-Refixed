@@ -46,7 +46,7 @@ public class dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && dialogueActivated)
+        if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated)
         {
             if (step < speaker.Length)
             {
@@ -107,7 +107,9 @@ public class dialogue : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         dialogueActivated = false; // Disable dialogue when the player exits the trigger
-        dialogueCanvas.SetActive(false); // Hide dialogue canvas
-        choiceCanvas.SetActive(false); // Hide choice canvas when exiting
+        if(dialogueCanvas != null || choiceCanvas != null){
+            dialogueCanvas.SetActive(false); // Hide dialogue canvas
+            choiceCanvas.SetActive(false);
+        }
     }
 }

@@ -12,6 +12,7 @@ public class CameraFollow : MonoBehaviour
     public float zoomSpeed = 2f;        // Speed of zooming
     public float minZoom;          // Minimum zoom level
     public float maxZoom;         // Maximum zoom level
+    public float minY, maxY;
 
     private Camera cam;                 // Reference to the Camera component
 
@@ -24,6 +25,7 @@ public class CameraFollow : MonoBehaviour
     {
         // Follow the player
         Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, transform.position.z);
+        newPos.y = Mathf.Clamp(newPos.y, minY, maxY);
         transform.position = Vector3.Lerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
 
         // Zoom in/out with mouse scroll

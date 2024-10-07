@@ -14,6 +14,11 @@ public class NoteGraphic : MonoBehaviour
     Vector2 movement;
     private new SpriteRenderer renderer; // Hiding the inherited member
 
+    [Header("Graphics Settings")]
+    public Sprite[] spriteCycle;
+    public float shakeAmount;
+    public float shakeSpeed;
+
     [Header("Length Note")]
     public Sprite lengthNoteSprite;
     public Material lineMaterial;
@@ -84,6 +89,8 @@ public class NoteGraphic : MonoBehaviour
         if (spawned && initialized)
         {
 
+            
+
             if (!hit || failedFollow)
                 transform.Translate(movement * vel * Time.deltaTime);
 
@@ -112,6 +119,8 @@ public class NoteGraphic : MonoBehaviour
             Miss();
         }
     }
+
+    
 
     private void Destroy(float _time)
     {
@@ -156,12 +165,14 @@ public class NoteGraphic : MonoBehaviour
         return (audio.source.time - note.StartTime);
     }
 
-    public void Hit()
+    public void Hit(float tol, PlayerScore scoreScript)
     {
         Debug.Log("Hit");
         if (type == NoteType.Normal)
         {
-            Destroy(0f);
+            CheckPointAccuracy(tol, scoreScript);
+            renderer.enabled = false;
+            Destroy(0.0f);
         }
         else if (type == NoteType.Length && !hit && renderer.enabled)
         {
@@ -170,8 +181,20 @@ public class NoteGraphic : MonoBehaviour
         }
         else if (type == NoteType.Length && hit && !renderer.enabled)
         {
+            CheckPointAccuracy(tol, scoreScript);
             Destroy(lengthChild);
-            Destroy(0f);
+            Destroy(0.0f);
+        }
+    }
+
+    public void CheckPointAccuracy(float tol, PlayerScore scoreScript){
+        Debug.Log(tol);
+        if(tol < 1 && tol > 0.3){
+            scoreScript.SetScore(25);
+        }else if(tol <= 0.3 && tol >= 0.1){
+            scoreScript.SetScore(50);
+        }else if(tol < 0.1){
+            scoreScript.SetScore(100);
         }
     }
 
