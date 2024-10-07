@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6b17e365f0aa764d80c5a57b53e3ed1
+guid: d949fb2a96090f648866b388b8106690
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,70 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: SpacebarMessage_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b2e8756e3a4f8f478db74cbd949c375
-      internalID: 785349768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpacebarMessage_1
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62989f1d89bd95a48b800afd4b67f520
-      internalID: 1352245306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpacebarMessage_2
-      rect:
-        serializedVersion: 2
-        x: 4096
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdfd2d564b429fc4b88773200da90d65
-      internalID: 931354823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,14 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      SpacebarMessage_0: 785349768
-      SpacebarMessage_1: 1352245306
-      SpacebarMessage_2: 931354823
-      SpacebarMessage_3: -1663182749
-      SpacebarMessage_4: 1031341630
-      SpacebarMessage_5: -1418562346
-      SpacebarMessage_6: -264475431
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

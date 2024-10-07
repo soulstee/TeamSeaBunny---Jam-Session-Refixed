@@ -10,7 +10,7 @@ public class RhythmControl : MonoBehaviour
     public static TrackKey[] keyLists = new TrackKey[6];
     public TextMeshProUGUI[] keyText = new TextMeshProUGUI[6];
 
-    public static float tolerance = 0.4f;
+    public static float tolerance = 0.9f;
 
     PlayerScore scoreScript;
 
@@ -35,6 +35,9 @@ public class RhythmControl : MonoBehaviour
         }
         for(int i = 0; i < keyLists.Length; i++){
                 keyLists[i] = new TrackKey(i);
+                if(Data.keys[i] == KeyCode.None){
+                    Data.keys[i] = (KeyCode)System.Enum.Parse(typeof(KeyCode), "Alpha" + (i+1).ToString());
+                }
                 keyLists[i].SetKey(Data.keys[i]);
         }
 
@@ -74,14 +77,14 @@ public class RhythmControl : MonoBehaviour
                 keyLists[key].down = true;
                 foreach(var note in keyLists[key].notesInKey){
                     if(note != null && note.spawned && note.CheckNoteDist() <= tolerance){
-                        note.Hit(tolerance-note.CheckNoteDist(), scoreScript);
+                        note.Hit(note.CheckNoteDist(), scoreScript);
                     }
                 }
             }else if(Input.GetKeyUp(keyLists[key].code)){
                 keyLists[key].down = false;
                 foreach(var note in keyLists[key].notesInKey){
                     if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned && note.CheckChildDist() <= tolerance){
-                        note.Hit(tolerance-note.CheckNoteDist(), scoreScript);
+                        note.Hit(note.CheckChildDist(), scoreScript);
                     }else if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned){
                         note.FailedFollowingNote();
                         note.SetRenderer(true);

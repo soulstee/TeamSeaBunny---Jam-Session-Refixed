@@ -19,6 +19,8 @@ public class dialogue : MonoBehaviour
 
     [SerializeField]
     private Image portraitImage;
+    [SerializeField]
+    private GameObject dialogueNote;
 
     [SerializeField]
     private GameObject choiceCanvas; // New canvas for choices
@@ -49,7 +51,7 @@ public class dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated)
         {
-            
+            dialogueNote.SetActive(false);
             dialogueCanvas.SetActive(true);
             if (step < speaker.Length)
             {
@@ -107,13 +109,15 @@ public class dialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             dialogueActivated = true; // Enable dialogue when the player enters the trigger
+            dialogueNote.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         dialogueActivated = false; // Disable dialogue when the player exits the trigger
-        if(dialogueCanvas != null || choiceCanvas != null){
+        if(dialogueCanvas != null || choiceCanvas != null || dialogueNote != null){
+            dialogueNote.SetActive(false);
             dialogueCanvas.SetActive(false); // Hide dialogue canvas
             if(choiceCanvas != null)
             choiceCanvas.SetActive(false);

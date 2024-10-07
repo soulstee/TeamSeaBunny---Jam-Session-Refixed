@@ -51,12 +51,12 @@ MonoBehaviour:
   spriteCycle: []
   shakeAmount: 15
   shakeSpeed: 2
-  lengthNoteSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  lengthNoteSprite: {fileID: 21300000, guid: 2e76088e225a06b418be9094203bbedb, type: 3}
   lineMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   lineColor:
     serializedVersion: 2
-    key0: {r: 0, g: 1, b: 0.101481676, a: 1}
-    key1: {r: 0, g: 0.5, b: 0.049999952, a: 1}
+    key0: {r: 1, g: 0.6462264, b: 0.95651937, a: 1}
+    key1: {r: 1, g: 0, b: 0.4713459, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -84,6 +84,12 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   lineWidth: 0.3
+  hitEffect: {fileID: 8026822402360828819, guid: 0412d77e307941a47bc6540b9756b741, type: 3}
+  spritesHit:
+  - {fileID: 21300000, guid: 83fe9f4b7c65bcb44896f78da2a4613f, type: 3}
+  - {fileID: 21300000, guid: 4f2ea8ccf6cec5f4a8316ed535dec3c1, type: 3}
+  - {fileID: 21300000, guid: 940fb006a7b24f3429dcc77e073e4708, type: 3}
+  - {fileID: 21300000, guid: e942bceb513d38940b272782924ee582, type: 3}
   target: {fileID: 0}
   spawned: 0
 --- !u!212 &4907194174276610988
@@ -127,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2e76088e225a06b418be9094203bbedb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2353ff3b79aa60547b6158f2ac75a779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

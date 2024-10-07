@@ -25,6 +25,10 @@ public class NoteGraphic : MonoBehaviour
     public Gradient lineColor;
     public float lineWidth;
 
+    [Header("Prefabs")]
+    public GameObject hitEffect;
+    public Sprite[] spritesHit;
+
     [HideInInspector]
     public Transform target;
     bool missed = false;
@@ -112,7 +116,7 @@ public class NoteGraphic : MonoBehaviour
             }
         }
 
-        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > dist + RhythmControl.tolerance)
+        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > RhythmControl.tolerance)
         {
             Miss();
         }
@@ -186,13 +190,26 @@ public class NoteGraphic : MonoBehaviour
     }
 
     public void CheckPointAccuracy(float tol, PlayerScore scoreScript){
-        Debug.Log(tol);
-        if(tol < 1 && tol > 0.5){
-            scoreScript.SetScore(25);
+        if(tol < 0.9 && tol > 0.5){
+            scoreScript.SetScore(0);
+            GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            obj.GetComponent<SpriteRenderer>().sprite = spritesHit[3];
+            Destroy(obj, 1f);
         }else if(tol <= 0.5 && tol >= 0.3){
+            scoreScript.SetScore(25);
+            GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            obj.GetComponent<SpriteRenderer>().sprite = spritesHit[2];
+            Destroy(obj, 1f);
+        }else if(tol <= 0.3 && tol >= 0.15){
             scoreScript.SetScore(50);
-        }else if(tol < 0.3){
+            GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            obj.GetComponent<SpriteRenderer>().sprite = spritesHit[1];
+            Destroy(obj, 1f);
+        }else if(tol < 0.15){
             scoreScript.SetScore(100);
+            GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            obj.GetComponent<SpriteRenderer>().sprite = spritesHit[0];
+            Destroy(obj, 1f);
         }
     }
 
