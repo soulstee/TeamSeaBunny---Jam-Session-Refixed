@@ -21,18 +21,21 @@ public class RhythmControl : MonoBehaviour
 
         for(int i = 0; i < keyText.Length; i++){
             keyText[i].text = Data.keys[i].ToString();
+            if(Data.keys[i].ToString().IndexOf("Alpha") == 0){
+                keyText[i].text = Data.keys[i].ToString().Substring(5);
+            }
         }
     }
 
     public static void SetNotes(){
 
         if(keyLists[0] == null){
-            if(Data.keys.Count == 0)
-                Data.DefaultBinds();
-            for(int i = 0; i < keyLists.Length; i++){
+            if(!Data.set)
+                Data.BindFind("Horizontal");
+        }
+        for(int i = 0; i < keyLists.Length; i++){
                 keyLists[i] = new TrackKey(i);
                 keyLists[i].SetKey(Data.keys[i]);
-            }
         }
 
         foreach(var note in activeNotes){
