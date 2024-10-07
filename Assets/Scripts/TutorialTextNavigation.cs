@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialTextNavigation : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TutorialTextNavigation : MonoBehaviour
         {
             currentDialogueIndex++;
             ShowDialogueLine(currentDialogueIndex);
+        }else if(currentDialogueIndex == dialogueLines.Count-1){
+            SceneManager.LoadScene("MainWorld_DAY");
         }
     }
 

@@ -38,7 +38,8 @@ public class dialogue : MonoBehaviour
     private string[] dialogueWords;
 
     [SerializeField]
-    private Sprite[] portrait;
+    private SpeakerImage[] portrait;
+    public Sprite empty;
 
     private bool dialogueActivated;
     private int step;
@@ -48,12 +49,18 @@ public class dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated)
         {
+            
+            dialogueCanvas.SetActive(true);
             if (step < speaker.Length)
             {
                 // Show the next line of dialogue
                 speakerText.text = speaker[step];
+                dialogueText.text = "";
+                dialogueText = portrait[step].dialogueText;
                 dialogueText.text = dialogueWords[step];
-                portraitImage.sprite = portrait[step];
+                portraitImage.sprite = empty;
+                portraitImage = portrait[step].image;
+                portraitImage.sprite = portrait[step].sprite;
                 step++;
                 
                 // // If we reached the end of the dialogue
@@ -73,8 +80,7 @@ public class dialogue : MonoBehaviour
     }
 
     private void ShowChoice()
-    {
-        dialogueCanvas.SetActive(false); // Hide the dialogue canvas
+    { // Hide the dialogue canvas
         choiceCanvas.SetActive(true); // Activate the choice canvas
         choiceText.text = "Do you want to proceed?"; // Set choice text
         yesButton.onClick.RemoveAllListeners(); // Clear previous listeners
@@ -109,7 +115,15 @@ public class dialogue : MonoBehaviour
         dialogueActivated = false; // Disable dialogue when the player exits the trigger
         if(dialogueCanvas != null || choiceCanvas != null){
             dialogueCanvas.SetActive(false); // Hide dialogue canvas
+            if(choiceCanvas != null)
             choiceCanvas.SetActive(false);
         }
     }
+}
+
+[System.Serializable]
+public class SpeakerImage{
+    public Sprite sprite;
+    public Image image;
+    public TextMeshProUGUI dialogueText;
 }

@@ -89,9 +89,7 @@ public class NoteGraphic : MonoBehaviour
         if (spawned && initialized)
         {
 
-            
-
-            if (!hit || failedFollow)
+            if (!hit || failedFollow && renderer.enabled)
                 transform.Translate(movement * vel * Time.deltaTime);
 
             if (type == NoteType.Length)
@@ -189,11 +187,11 @@ public class NoteGraphic : MonoBehaviour
 
     public void CheckPointAccuracy(float tol, PlayerScore scoreScript){
         Debug.Log(tol);
-        if(tol < 1 && tol > 0.3){
+        if(tol < 1 && tol > 0.5){
             scoreScript.SetScore(25);
-        }else if(tol <= 0.3 && tol >= 0.1){
+        }else if(tol <= 0.5 && tol >= 0.3){
             scoreScript.SetScore(50);
-        }else if(tol < 0.1){
+        }else if(tol < 0.3){
             scoreScript.SetScore(100);
         }
     }
