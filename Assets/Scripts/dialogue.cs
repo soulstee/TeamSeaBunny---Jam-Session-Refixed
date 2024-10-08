@@ -51,20 +51,47 @@ public class dialogue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated)
         {
-            dialogueNote.SetActive(false);
-            dialogueCanvas.SetActive(true);
+            if (dialogueNote != null)
+            {
+                dialogueNote.SetActive(false);
+            }
+
+            if (dialogueCanvas != null)
+            {
+                dialogueCanvas.SetActive(true);
+            }
+
             if (step < speaker.Length)
             {
                 // Show the next line of dialogue
-                speakerText.text = speaker[step];
-                dialogueText.text = "";
-                dialogueText = portrait[step].dialogueText;
-                dialogueText.text = dialogueWords[step];
-                portraitImage.sprite = empty;
-                portraitImage = portrait[step].image;
-                portraitImage.sprite = portrait[step].sprite;
+                if (speakerText != null)
+                {
+                    speakerText.text = speaker[step];
+                }
+
+                if (dialogueText != null && portrait[step] != null)
+                {
+                    dialogueText.text = "";
+                    dialogueText = portrait[step].dialogueText;
+                    dialogueText.text = dialogueWords[step];
+                }
+
+                if (portraitImage != null)
+                {
+                    portraitImage.sprite = empty;
+                }
+
+                if (portrait[step] != null)
+                {
+                    portraitImage = portrait[step].image;
+                    if (portraitImage != null)
+                    {
+                        portraitImage.sprite = portrait[step].sprite;
+                    }
+                }
+
                 step++;
-                
+
                 // // If we reached the end of the dialogue
                 // if (step >= speaker.Length)
                 // {
@@ -82,13 +109,28 @@ public class dialogue : MonoBehaviour
     }
 
     private void ShowChoice()
-    { // Hide the dialogue canvas
-        choiceCanvas.SetActive(true); // Activate the choice canvas
-        choiceText.text = "Do you want to proceed?"; // Set choice text
-        yesButton.onClick.RemoveAllListeners(); // Clear previous listeners
-        yesButton.onClick.AddListener(OnYes);
-        noButton.onClick.RemoveAllListeners(); // Clear previous listeners
-        noButton.onClick.AddListener(OnNo);
+    { //Hide the dialogue canvas
+        if (choiceCanvas != null)
+        {
+            choiceCanvas.SetActive(true); // Activate the choice canvas
+        }
+
+        if (choiceText != null)
+        {
+            choiceText.text = "Do you want to proceed?"; // Set choice text
+        }
+
+        if (yesButton != null)
+        {
+            yesButton.onClick.RemoveAllListeners(); // Clear previous listeners
+            yesButton.onClick.AddListener(OnYes);
+        }
+
+        if (noButton != null)
+        {
+            noButton.onClick.RemoveAllListeners(); // Clear previous listeners
+            noButton.onClick.AddListener(OnNo);
+        }
     }
 
     private void OnYes()
@@ -99,8 +141,15 @@ public class dialogue : MonoBehaviour
 
     private void OnNo()
     {
-        choiceCanvas.SetActive(false); // Hide the choice canvas
-        dialogueCanvas.SetActive(true); // Reactivate dialogue canvas
+        if (choiceCanvas != null)
+        {
+            choiceCanvas.SetActive(false); // Hide the choice canvas
+        }
+
+        if (dialogueCanvas != null)
+        {
+            dialogueCanvas.SetActive(true); // Reactivate dialogue canvas
+        }
         //step = 0; // Reset step or set it to an appropriate value
     }
 
@@ -109,24 +158,39 @@ public class dialogue : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             dialogueActivated = true; // Enable dialogue when the player enters the trigger
-            dialogueNote.SetActive(true);
+
+            if (dialogueNote != null)
+            {
+                dialogueNote.SetActive(true);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         dialogueActivated = false; // Disable dialogue when the player exits the trigger
-        if(dialogueCanvas != null || choiceCanvas != null || dialogueNote != null){
+
+        if (dialogueNote != null)
+        {
             dialogueNote.SetActive(false);
+        }
+
+        if (dialogueCanvas != null)
+        {
             dialogueCanvas.SetActive(false); // Hide dialogue canvas
-            if(choiceCanvas != null)
-            choiceCanvas.SetActive(false);
+        }
+
+        if (choiceCanvas != null)
+        {
+            choiceCanvas.SetActive(false); // Hide choice canvas
         }
     }
+
 }
 
 [System.Serializable]
-public class SpeakerImage{
+public class SpeakerImage
+{
     public Sprite sprite;
     public Image image;
     public TextMeshProUGUI dialogueText;
