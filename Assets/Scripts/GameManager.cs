@@ -16,16 +16,3 @@ public class GameManager : MonoBehaviour
         
     }
 }
-
-public static class Data{
-    public static Dictionary<int, KeyCode> keys = new Dictionary<int, KeyCode>();
-
-    public static void DefaultBinds(){
-        keys[0] = KeyCode.A;
-        keys[1] = KeyCode.S;
-        keys[2] = KeyCode.D;
-        keys[3] = KeyCode.J;
-        keys[4] = KeyCode.K;
-        keys[5] = KeyCode.L;
-    }
-}
