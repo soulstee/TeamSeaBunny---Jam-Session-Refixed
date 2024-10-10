@@ -35,12 +35,15 @@ public class KeyBind : MonoBehaviour
         if(drop.value == 0){
             Data.BindFind("Horizontal");
             SetAllText();
+             custom.SetActive(false);
         }else if(drop.value == 1){
             Data.BindFind("Vertical");
             SetAllText();
+             custom.SetActive(false);
         }else if(drop.value == 2){
             Data.BindFind("SixShooter");
             SetAllText();
+            custom.SetActive(false);
         }else if(drop.value == 3){
             custom.SetActive(true);
         }

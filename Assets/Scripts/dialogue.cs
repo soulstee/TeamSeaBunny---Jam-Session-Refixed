@@ -136,7 +136,7 @@ public class dialogue : MonoBehaviour
     private void OnYes()
     {
         // Load the new scene
-        SceneManager.LoadScene("SampleScene"); // Replace with your target scene name
+        SceneManager.LoadScene("Rhythm"); // Replace with your target scene name
     }
 
     private void OnNo()
