@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 585188cdc4600544eb408bee749e4b3a
+guid: 7e31991a9e1710d4eabb27f0a45c5827
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,14 +8,14 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: ThaleahFat
   fontNames:
-  - ThaleahFat
+  - Rocky Start
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
