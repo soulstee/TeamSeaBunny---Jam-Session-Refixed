@@ -25,6 +25,7 @@ public class PlayerScore : MonoBehaviour {
         scoreText.text = score.ToString();
     }
 
+    // player win, loss state
     private void OnTriggerEnter(Collider2D collision) {
         if (collision.tag == "Win") {
             winText.gameObject.SetActive(true);
