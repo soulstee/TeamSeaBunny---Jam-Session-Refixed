@@ -41,15 +41,18 @@ public class dialogue : MonoBehaviour
 
     [SerializeField]
     private SpeakerImage[] portrait;
+
     public Sprite empty;
 
     private bool dialogueActivated;
     private int step;
+    public static bool inDialogue;
+    public bool finishedDialogue = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated)
+        if (Input.GetKeyDown(KeyCode.Space) && dialogueActivated && !finishedDialogue)
         {
             if (dialogueNote != null)
             {
@@ -72,13 +75,16 @@ public class dialogue : MonoBehaviour
                 if (dialogueText != null && portrait[step] != null)
                 {
                     dialogueText.text = "";
+                    dialogueText.transform.parent.gameObject.SetActive(false);
                     dialogueText = portrait[step].dialogueText;
+                    dialogueText.transform.parent.gameObject.SetActive(true);
+                    speakerText.rectTransform.anchoredPosition = new Vector2(dialogueText.transform.parent.gameObject.GetComponent<RectTransform>().anchoredPosition.x-280f, dialogueText.transform.parent.gameObject.GetComponent<RectTransform>().anchoredPosition.y+70f);
                     dialogueText.text = dialogueWords[step];
                 }
 
                 if (portraitImage != null)
                 {
-                    portraitImage.sprite = empty;
+                    //portraitImage.sprite = empty;
                 }
 
                 if (portrait[step] != null)
@@ -110,6 +116,8 @@ public class dialogue : MonoBehaviour
 
     private void ShowChoice()
     { //Hide the dialogue canvas
+        finishedDialogue = true;
+
         if (choiceCanvas != null)
         {
             choiceCanvas.SetActive(true); // Activate the choice canvas
@@ -141,6 +149,7 @@ public class dialogue : MonoBehaviour
 
     private void OnNo()
     {
+        finishedDialogue = false;
         if (choiceCanvas != null)
         {
             choiceCanvas.SetActive(false); // Hide the choice canvas
@@ -148,7 +157,7 @@ public class dialogue : MonoBehaviour
 
         if (dialogueCanvas != null)
         {
-            dialogueCanvas.SetActive(true); // Reactivate dialogue canvas
+            dialogueCanvas.SetActive(false); // Reactivate dialogue canvas
         }
         //step = 0; // Reset step or set it to an appropriate value
     }
@@ -168,10 +177,12 @@ public class dialogue : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        finishedDialogue = false;
         dialogueActivated = false; // Disable dialogue when the player exits the trigger
 
         if (dialogueNote != null)
         {
+            step = 0;
             dialogueNote.SetActive(false);
         }
 
@@ -194,4 +205,5 @@ public class SpeakerImage
     public Sprite sprite;
     public Image image;
     public TextMeshProUGUI dialogueText;
+    public bool left;
 }

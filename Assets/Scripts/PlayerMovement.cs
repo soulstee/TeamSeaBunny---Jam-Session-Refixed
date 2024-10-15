@@ -18,11 +18,11 @@ Vector2 movement;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
     }
 
     void FixedUpdate()
     {
+        
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, transform.position.z);

@@ -45,21 +45,26 @@ public class RhythmControl : MonoBehaviour
             switch(note.target.gameObject.name){
                 case "1":
                     keyLists[0].notesInKey.Add(note);
+                    note.SetKeyInt(0);
                     break;
                 case "2":
                     keyLists[1].notesInKey.Add(note);
+                    note.SetKeyInt(1);
                     break;
                 case "3":
                     keyLists[2].notesInKey.Add(note);
+                    note.SetKeyInt(2);
                     break;
                 case "4":
                     keyLists[3].notesInKey.Add(note);
+                    note.SetKeyInt(3);
                     break;
                 case "5":
                     keyLists[4].notesInKey.Add(note);
                     break;
                 case "6":
                     keyLists[5].notesInKey.Add(note);
+                    note.SetKeyInt(5);
                     break;
             }
         }
@@ -76,7 +81,7 @@ public class RhythmControl : MonoBehaviour
             if(Input.GetKeyDown(keyLists[key].code)){
                 keyLists[key].down = true;
                 foreach(var note in keyLists[key].notesInKey){
-                    if(note != null && note.spawned && note.CheckNoteDist() <= tolerance){
+                    if(note != null && note == keyLists[key].notesInKey[0] && note.spawned && note.CheckNoteDist() <= tolerance){
                         note.Hit(note.CheckNoteDist(), scoreScript);
                     }
                 }
