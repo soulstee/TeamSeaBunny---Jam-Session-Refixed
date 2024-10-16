@@ -31,7 +31,6 @@ public class NoteGraphic : MonoBehaviour
 
     [HideInInspector]
     public Transform target;
-    public bool hittable = false;
     bool missed = false;
     bool hit = false;
     [HideInInspector]
@@ -127,15 +126,6 @@ public class NoteGraphic : MonoBehaviour
         key = _key;
     }
 
-    public bool CanBeHit(){
-        foreach(var note in RhythmControl.keyLists[key].notesInKey){
-            if(note != null && note.hittable && !note.CheckMissed()){
-                return true;
-            }
-        }
-        return false;
-    }
-
     private void Destroy(float _time)
     {
         Destroy(this.gameObject, _time);
@@ -180,14 +170,8 @@ public class NoteGraphic : MonoBehaviour
 
     public void Hit(float tol, PlayerScore scoreScript)
     {
-        if(!hittable){
-            return;
-        }
-
-        Debug.Log("Hit");
         if (type == NoteType.Normal)
         {
-            RhythmControl.activeNotes.Remove(this);
             CheckPointAccuracy(tol, scoreScript);
             renderer.enabled = false;
             Destroy(0.0f);
@@ -199,7 +183,6 @@ public class NoteGraphic : MonoBehaviour
         }
         else if (type == NoteType.Length && hit && !renderer.enabled)
         {
-            RhythmControl.activeNotes.Remove(this);
             CheckPointAccuracy(tol, scoreScript);
             Destroy(lengthChild);
             Destroy(0.0f);

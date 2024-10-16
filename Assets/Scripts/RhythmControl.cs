@@ -79,13 +79,15 @@ public class RhythmControl : MonoBehaviour
         
         for(int key = 0; key < 6; key++){
             if(Input.GetKeyDown(keyLists[key].code)){
+                GetComponent<LittleGuysScript>().UpdateGuy(1);
                 keyLists[key].down = true;
                 foreach(var note in keyLists[key].notesInKey){
-                    if(note != null && note == keyLists[key].notesInKey[0] && note.spawned && note.CheckNoteDist() <= tolerance){
+                    if(note != null && note.spawned && note.CheckNoteDist() <= tolerance){
                         note.Hit(note.CheckNoteDist(), scoreScript);
                     }
                 }
             }else if(Input.GetKeyUp(keyLists[key].code)){
+                GetComponent<LittleGuysScript>().UpdateGuy(0);
                 keyLists[key].down = false;
                 foreach(var note in keyLists[key].notesInKey){
                     if(note != null && note.CheckFollowing() && note.type == NoteType.Length && note.spawned && note.CheckChildDist() <= tolerance){

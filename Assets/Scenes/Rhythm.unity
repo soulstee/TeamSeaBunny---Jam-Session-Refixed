@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 208681440}
   - component: {fileID: 208681439}
   - component: {fileID: 208681438}
-  - component: {fileID: 208681441}
   - component: {fileID: 208681437}
+  - component: {fileID: 208681441}
+  - component: {fileID: 208681442}
   m_Layer: 0
   m_Name: Rhythm Manager
   m_TagString: Untagged
@@ -168,9 +169,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2c0648521a267ac4cbcbaa541c6dd593, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a770ad57b7539a64e953fa301d026406, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.32
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -266,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ea992fb93cc24439d9fb43c86e0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midiFilePath: KeyTar1Test
+  midiFilePath: AllT
   bpm: 120
 --- !u!114 &208681439
 MonoBehaviour:
@@ -310,7 +311,7 @@ MonoBehaviour:
   - {fileID: 563304413}
   source: {fileID: 208681437}
   delay: 3
-  noteDelay: 7
+  noteDelay: 1
 --- !u!114 &208681441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,10 +321,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 208681435}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931a6e8871f9e484aac612b6f93a749c, type: 3}
+  m_Script: {fileID: 11500000, guid: 650493404b39d8b40baf2ece779e2e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guy1:
+  - {fileID: 21300000, guid: b637e0c7c8f57da42b0723a83f0d9658, type: 3}
+  - {fileID: 21300000, guid: a44e96d1d05635e48b1fafd9bec395eb, type: 3}
+  guy2:
+  - {fileID: 21300000, guid: 128f87cc6055b3147868abca9fb1e255, type: 3}
+  - {fileID: 21300000, guid: f683098fdafa28645b9d98609a2ee953, type: 3}
+  guy1Image: {fileID: 1658293680}
+  guy2Image: {fileID: 1644863429}
+--- !u!114 &208681442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208681435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03092468553f3f47bcad4f9b9b79037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1886858109}
+  winText: {fileID: 0}
+  lossText: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &226908521
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
             int pos = (int)Random.Range(0, targets.Length);
             Transform targ = targets[pos];
             GameObject obj = Instantiate(test, Vector3.zero, Quaternion.identity);
-        if(notes[i].Length >= avgNoteLength*1.5f){
+        if(notes[i].Length >= avgNoteLength*2f){
             //obj.GetComponent<SpriteRenderer>().color = Color.green;
             obj.GetComponent<NoteGraphic>().InitializeOnSpawn(notes[i], this, targ, noteDelay, NoteType.Length);
         }else{

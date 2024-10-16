@@ -26,7 +26,7 @@ public class PlayerScore : MonoBehaviour {
     }
 
     // player win, loss state
-    private void OnTriggerEnter(Collider2D collision) {
+    /*private void OnTriggerEnter(Collider2D collision) {
         if (collision.tag == "Win") {
             winText.gameObject.SetActive(true);
             Time.timeScale = 0;
@@ -36,5 +36,5 @@ public class PlayerScore : MonoBehaviour {
             lossText.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
-    }
+    }*/
 }
