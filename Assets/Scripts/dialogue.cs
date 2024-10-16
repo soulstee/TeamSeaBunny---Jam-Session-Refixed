@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement; // Import this to manage scene transitions
 
 public class dialogue : MonoBehaviour
 {
+    public string rhythmLevel;
     // UI References
     [SerializeField]
     private GameObject dialogueCanvas;
@@ -144,7 +145,7 @@ public class dialogue : MonoBehaviour
     private void OnYes()
     {
         // Load the new scene
-        SceneManager.LoadScene("Rhythm"); // Replace with your target scene name
+        SceneManager.LoadScene(rhythmLevel); // Replace with your target scene name
     }
 
     private void OnNo()

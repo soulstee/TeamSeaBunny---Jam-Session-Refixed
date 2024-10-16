@@ -475,6 +475,343 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562509836}
   m_CullTransparentMesh: 1
+--- !u!1 &618714744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 618714750}
+  - component: {fileID: 618714749}
+  - component: {fileID: 618714747}
+  - component: {fileID: 618714746}
+  - component: {fileID: 618714745}
+  m_Layer: 0
+  m_Name: Keytarist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &618714745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618714744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433709578104e0443a98f69295e383c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rhythmLevel: DrummerRhythm
+  dialogueCanvas: {fileID: 1322108429}
+  speakerText: {fileID: 946004231}
+  dialogueText: {fileID: 1952866656}
+  portraitImage: {fileID: 1804760644}
+  dialogueNote: {fileID: 1795535227}
+  choiceCanvas: {fileID: 1197100232}
+  choiceText: {fileID: 874728887}
+  yesButton: {fileID: 699132066}
+  noButton: {fileID: 2063104325}
+  speaker:
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  - Ace
+  - Starfield
+  dialogueWords:
+  - So, you the new kid?
+  - "Um\u2026 sorry do you mean me?"
+  - "I\u2019m looking right at you. Who else would I be talking to?"
+  - "Oh\u2026 I guess that\u2019s fair."
+  - So are you the new kid or not?
+  - "Yeah, I\u2019m new to town, but I\u2019m not really a kid."
+  - "You\u2019re younger than me, so you\u2019re a kid."
+  - "But we look about the same age. How do you know I\u2019m not older than you?"
+  - "I do my research, so yes, I do know. Just like I know you are looking to form
+    a band for the music festival.\r"
+  - "\u201CFair enough I guess\u2026 Wait, is that why you wanted to talk to me?!
+    Do you want to join?!\u201D\r\n"
+  - ...
+  - "Umm\u2026 is there a problem?\r"
+  - "Yes, I don\u2019t think you have it in you.\r"
+  - "Hey, you don\u2019t even know me! I know my performance will be great!\r"
+  - "No, you don\u2019t know that. If you were already that confident, you wouldn\u2019t
+    be looking for a group. You\u2019d either already have one, or you\u2019d be
+    fine performing on your own.\r"
+  - "Okay, well, I know my performance will be great if I can just get a good group
+    together.\r"
+  - "Again, you don\u2019t know that. And to be blunt, I don\u2019t believe it.\r"
+  - "Look, if all you wanted to do was talk trash, I didn\u2019t ask. So, if you\u2019re
+    done wasting my time, I have a band to form and a performance to prepare for.\r"
+  - "\u2026 Maybe I am interested in joining."
+  - "Wait\u2026 what?\r"
+  - "I didn\u2019t start this conversation just to insult you. I don\u2019t think
+    you\u2019re serious enough to pull this off, but maybe I\u2019m wrong. I don\u2019t
+    know for sure yet, so I want to see if you have the discipline and drive to see
+    it through. If you don\u2019t, then it doesn\u2019t matter how good your performance
+    is. When the waves get rough and the tides are high, you\u2019ll just get washed
+    up. I don\u2019t want to work with someone who isn\u2019t going to put in the
+    effort."
+  - "Alright, so what do I need to do?\r"
+  - "Let\u2019s jam. If you\u2019ve got the drive, prove it and keep up with me.\r"
+  portrait:
+  - sprite: {fileID: 21300000, guid: 40edccad50ae19845bed58a2253c984f, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 725166b390e4c444bb4bcb6976212d3e, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 9f2e3f24a2edfad4c8e0b32e43e6b5b0, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  empty: {fileID: 21300000, guid: db925a174c115ff4fa53dede951d81be, type: 3}
+  finishedDialogue: 0
+--- !u!50 &618714746
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618714744}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &618714747
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618714744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1}
+    newSize: {x: 20.48, y: 15.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &618714749
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618714744}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 3b136b40c434c1d4aac64f57d1a5dfce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 20.48, y: 15.36}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &618714750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618714744}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.208, y: -1.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1795535230}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699132062
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +933,306 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &793782073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793782079}
+  - component: {fileID: 793782078}
+  - component: {fileID: 793782076}
+  - component: {fileID: 793782075}
+  - component: {fileID: 793782074}
+  m_Layer: 0
+  m_Name: Drummer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &793782074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793782073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433709578104e0443a98f69295e383c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rhythmLevel: KeytarRhythm
+  dialogueCanvas: {fileID: 1322108429}
+  speakerText: {fileID: 946004231}
+  dialogueText: {fileID: 1952866656}
+  portraitImage: {fileID: 1804760644}
+  dialogueNote: {fileID: 991032737}
+  choiceCanvas: {fileID: 1197100232}
+  choiceText: {fileID: 874728887}
+  yesButton: {fileID: 699132066}
+  noButton: {fileID: 2063104325}
+  speaker:
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  - Ace
+  - Bear
+  dialogueWords:
+  - Hi there, Ace! What are you up to? Out to take the world by storm?
+  - "Bear! I\u2019m just trying to prepare for the music festival, but I don\u2019t
+    think my performance is going to be anything as grand as a storm."
+  - "Sounds like you\u2019ve run into a bit of\u2026 treble."
+  - Ugh, again with the puns?
+  - "Haha, don\u2019t fret, I\u2019ll refrain from making too many."
+  - "Make it stop\u2026"
+  - Fine, fine. What seems to be bothering you? Maybe I can offer a note of advice.
+  - "I\u2019m going to ignore that last one."
+  - Just tell me what the problem is.
+  - "My performance just feels like it\u2019s missing something. I thought maybe
+    if I could form a group, that might give it that extra layer of sound it needs.
+    Unfortunately, I don\u2019t really know many people in town besides you, and
+    I only know you because you helped me get on my feet when I transferred here."
+  - "That does sound like a hold up. I wish I could help, but I\u2019m not sure what
+    everyone else\u2019s plans are for the festival. Best I can do is keep an eye
+    out and try and point someone in your direction. Any instruments you are looking
+    for in particular?"
+  - "Ummm I haven\u2019t really thought about it, but maybe someone on keytar would
+    be a good idea? Wait, don\u2019t you play keytar?"
+  - "Well, I do, but I\u2019ve never really been great with on stage performances."
+  - Then this is the perfect chance for you to try them out more! Please, Bear? I
+    could really use the help.
+  - "I don\u2019t know Ace. Maybe we could just have a jam session right here? There
+    are enough people around, maybe we would both feel a bit better about performing
+    on stage afterwards."
+  - Wait, right here? Right now?
+  - "You heard me! Let\u2019s jam!"
+  portrait:
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: aa2ff94ef03f21b4db7bdbe646c92495, type: 3}
+    image: {fileID: 1804760644}
+    dialogueText: {fileID: 1952866656}
+    left: 0
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  - sprite: {fileID: 21300000, guid: 73557af60ab4bd740ba8219973868e29, type: 3}
+    image: {fileID: 1720132216}
+    dialogueText: {fileID: 1952866656}
+    left: 1
+  empty: {fileID: 21300000, guid: db925a174c115ff4fa53dede951d81be, type: 3}
+  finishedDialogue: 0
+--- !u!50 &793782075
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793782073}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &793782076
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793782073}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.3333334, y: 1}
+    newSize: {x: 20.48, y: 15.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &793782078
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793782073}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 4613bbcb978e8b843948f5b2cb622edb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 20.48, y: 15.36}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &793782079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793782073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.739, y: -1.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 991032740}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874728884
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1607,112 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &991032737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991032740}
+  - component: {fileID: 991032739}
+  - component: {fileID: 991032738}
+  m_Layer: 0
+  m_Name: DialogueNote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &991032738
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991032737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1df6285ae1a9de948a0e8e4245fa4ffd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &991032739
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991032737}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 785349768, guid: b6b17e365f0aa764d80c5a57b53e3ed1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 20.48, y: 20.509998}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &991032740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991032737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.751, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 793782079}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1029036985
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,7 +1733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1029036986
 Animator:
   serializedVersion: 5
@@ -1164,6 +1907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433709578104e0443a98f69295e383c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rhythmLevel: Rhythm
   dialogueCanvas: {fileID: 1322108429}
   speakerText: {fileID: 946004231}
   dialogueText: {fileID: 1952866656}
@@ -1198,7 +1942,7 @@ MonoBehaviour:
     image: {fileID: 1720132216}
     dialogueText: {fileID: 1952866656}
     left: 1
-  - sprite: {fileID: 21300000, guid: 442e1180d4a91104e9cd196dd5a3a3fa, type: 3}
+  - sprite: {fileID: 21300000, guid: cba97d96cff70204097e85d90df0ba25, type: 3}
     image: {fileID: 1804760644}
     dialogueText: {fileID: 1952866656}
     left: 0
@@ -1705,6 +2449,164 @@ RectTransform:
   m_AnchoredPosition: {x: -655.41, y: -205.02}
   m_SizeDelta: {x: 750, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1752287493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752287495}
+  - component: {fileID: 1752287494}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1752287494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752287493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e9bfe1a5fd781479c8c61002b5b3fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 1897054163}
+  characters:
+  - {fileID: 1029036985}
+  - {fileID: 618714744}
+  - {fileID: 793782073}
+  backgrounds:
+  - {fileID: 21300000, guid: c51bb49c891f3d844a0007ee91c4f355, type: 3}
+  - {fileID: 21300000, guid: 223feb20497daa4449d2dd1e919736f7, type: 3}
+--- !u!4 &1752287495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752287493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04980383, y: 0.029197134, z: 6.4377584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1795535227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1795535230}
+  - component: {fileID: 1795535229}
+  - component: {fileID: 1795535228}
+  m_Layer: 0
+  m_Name: DialogueNote
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &1795535228
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795535227}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1df6285ae1a9de948a0e8e4245fa4ffd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1795535229
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795535227}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 785349768, guid: b6b17e365f0aa764d80c5a57b53e3ed1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 20.48, y: 20.509998}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1795535230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795535227}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.751, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 618714750}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804760641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,6 +3380,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1752287495}
   - {fileID: 1851954802}
   - {fileID: 1312900076}
   - {fileID: 2087829960}
@@ -2485,3 +3388,5 @@ SceneRoots:
   - {fileID: 1862852430}
   - {fileID: 77660448}
   - {fileID: 1029036988}
+  - {fileID: 618714750}
+  - {fileID: 793782079}

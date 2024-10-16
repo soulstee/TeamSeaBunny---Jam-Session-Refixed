@@ -98,7 +98,7 @@ public class NoteGraphic : MonoBehaviour
 
             if (type == NoteType.Length)
             {
-                if (following || failedFollow)
+                if (lengthChild != null && following || failedFollow)
                 {
                     lengthChild.transform.Translate(movement * vel * Time.deltaTime);
                 }
@@ -116,7 +116,7 @@ public class NoteGraphic : MonoBehaviour
             }
         }
 
-        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > RhythmControl.tolerance)
+        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > RhythmControl.tolerance+1f || Mathf.Abs(transform.position.x) > 75f)
         {
             Miss();
         }
@@ -172,6 +172,7 @@ public class NoteGraphic : MonoBehaviour
     {
         if (type == NoteType.Normal)
         {
+            RhythmControl.activeNotes.Remove(this);
             CheckPointAccuracy(tol, scoreScript);
             renderer.enabled = false;
             Destroy(0.0f);
@@ -183,6 +184,7 @@ public class NoteGraphic : MonoBehaviour
         }
         else if (type == NoteType.Length && hit && !renderer.enabled)
         {
+            RhythmControl.activeNotes.Remove(this);
             CheckPointAccuracy(tol, scoreScript);
             Destroy(lengthChild);
             Destroy(0.0f);
@@ -216,17 +218,16 @@ public class NoteGraphic : MonoBehaviour
     public void Miss()
     {
         RhythmControl.activeNotes.Remove(this);
-        
-        missed = true;
+        Debug.Log("Missed");
         if (lengthChild != null)
         {
             Destroy(5f + note.Length);
             Destroy(lengthChild, 5f + note.Length);
+            return;
         }
-        else
-        {
-            Destroy(5f);
-        }
+        Destroy(5f);
+
+        missed = true;
     }
 }
 

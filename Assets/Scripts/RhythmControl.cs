@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RhythmControl : MonoBehaviour
 {
@@ -98,6 +99,12 @@ public class RhythmControl : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    void LateUpdate(){
+        if(activeNotes.Count == 0){
+            SceneManager.LoadScene("Main");
         }
     }
 }

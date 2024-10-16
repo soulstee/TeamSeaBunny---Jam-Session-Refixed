@@ -169,7 +169,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a770ad57b7539a64e953fa301d026406, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2c0648521a267ac4cbcbaa541c6dd593, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ea992fb93cc24439d9fb43c86e0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midiFilePath: AllT
+  midiFilePath: KeyTar1
   bpm: 120
 --- !u!114 &208681439
 MonoBehaviour:
