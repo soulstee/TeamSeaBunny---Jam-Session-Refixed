@@ -37,6 +37,7 @@ public class NoteGraphic : MonoBehaviour
     public bool spawned = false;
     bool initialized = false;
     int key;
+
     void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -92,13 +93,12 @@ public class NoteGraphic : MonoBehaviour
 
         if (spawned && initialized)
         {
-
-            if (!hit || failedFollow && renderer.enabled)
+            if ((!hit || failedFollow) && renderer.enabled)
                 transform.Translate(movement * vel * Time.deltaTime);
 
             if (type == NoteType.Length)
             {
-                if (lengthChild != null && following || failedFollow)
+                if (lengthChild != null && (following || failedFollow))
                 {
                     lengthChild.transform.Translate(movement * vel * Time.deltaTime);
                 }
@@ -116,13 +116,15 @@ public class NoteGraphic : MonoBehaviour
             }
         }
 
-        if (spawned && !missed && vel * (audio.source.time - note.StartTime) > RhythmControl.tolerance+1f || Mathf.Abs(transform.position.x) > 75f)
+        // Refined condition to check if note is missed
+        if (spawned && !missed && (TimeExisted() > RhythmControl.tolerance || Mathf.Abs(transform.position.x) > 75f))
         {
             Miss();
         }
     }
 
-    public void SetKeyInt(int _key){
+    public void SetKeyInt(int _key)
+    {
         key = _key;
     }
 
@@ -191,23 +193,31 @@ public class NoteGraphic : MonoBehaviour
         }
     }
 
-    public void CheckPointAccuracy(float tol, PlayerScore scoreScript){
-        if(tol < 0.9 && tol > 0.5){
+    public void CheckPointAccuracy(float tol, PlayerScore scoreScript)
+    {
+        if (tol < 0.9 && tol > 0.5)
+        {
             scoreScript.SetScore(0);
             GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
             obj.GetComponent<SpriteRenderer>().sprite = spritesHit[3];
             Destroy(obj, 1f);
-        }else if(tol <= 0.5 && tol >= 0.3){
+        }
+        else if (tol <= 0.5 && tol >= 0.3)
+        {
             scoreScript.SetScore(25);
             GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
             obj.GetComponent<SpriteRenderer>().sprite = spritesHit[2];
             Destroy(obj, 1f);
-        }else if(tol <= 0.3 && tol >= 0.15){
+        }
+        else if (tol <= 0.3 && tol >= 0.15)
+        {
             scoreScript.SetScore(50);
             GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
             obj.GetComponent<SpriteRenderer>().sprite = spritesHit[1];
             Destroy(obj, 1f);
-        }else if(tol < 0.15){
+        }
+        else if (tol < 0.15)
+        {
             scoreScript.SetScore(100);
             GameObject obj = Instantiate(hitEffect, transform.position, Quaternion.identity);
             obj.GetComponent<SpriteRenderer>().sprite = spritesHit[0];
@@ -217,23 +227,24 @@ public class NoteGraphic : MonoBehaviour
 
     public void Miss()
     {
-        RhythmControl.activeNotes.Remove(this);
-        Debug.Log("Missed");
-        if (lengthChild != null)
+        if (!missed)  // Ensure we only flag a miss once
         {
-            Destroy(5f + note.Length);
-            Destroy(lengthChild, 5f + note.Length);
-            return;
+            missed = true;
+            RhythmControl.activeNotes.Remove(this);
+            Debug.Log("Missed");
+            
+            if (lengthChild != null)
+            {
+                Destroy(lengthChild, 5f + note.Length);
+            }
+            
+            Destroy(this.gameObject, 5f);  // Destroy after delay to allow visual effects
         }
-        Destroy(5f);
-
-        missed = true;
     }
 }
 
 public enum NoteType
 {
-
     Normal,
     Length,
 }
