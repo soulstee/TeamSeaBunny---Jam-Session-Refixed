@@ -2052,8 +2052,8 @@ AudioSource:
   m_GameObject: {fileID: 2066674364}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 05c477f84a1dc454fb7abc6f5b252033, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 844c62e5d9dfbd94fa3ebe85ad274a9c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2c0648521a267ac4cbcbaa541c6dd593, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ea992fb93cc24439d9fb43c86e0639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  midiFilePath: Drummer1
+  midiFilePath: KeyTar1
   bpm: 120
 --- !u!114 &2066674369
 MonoBehaviour:
@@ -2195,7 +2195,7 @@ MonoBehaviour:
   - {fileID: 1434499755}
   source: {fileID: 2066674367}
   delay: 3
-  noteDelay: 1
+  noteDelay: 2
 --- !u!4 &2066674371
 Transform:
   m_ObjectHideFlags: 0
