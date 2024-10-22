@@ -564,17 +564,12 @@ MonoBehaviour:
   - "Okay, well, I know my performance will be great if I can just get a good group
     together.\r"
   - "Again, you don\u2019t know that. And to be blunt, I don\u2019t believe it.\r"
-  - "Look, if all you wanted to do was talk trash, I didn\u2019t ask. So, if you\u2019re
-    done wasting my time, I have a band to form and a performance to prepare for.\r"
   - "\u2026 Maybe I am interested in joining."
   - "Wait\u2026 what?\r"
-  - "I didn\u2019t start this conversation just to insult you. I don\u2019t think
-    you\u2019re serious enough to pull this off, but maybe I\u2019m wrong. I don\u2019t
-    know for sure yet, so I want to see if you have the discipline and drive to see
-    it through. If you don\u2019t, then it doesn\u2019t matter how good your performance
-    is. When the waves get rough and the tides are high, you\u2019ll just get washed
-    up. I don\u2019t want to work with someone who isn\u2019t going to put in the
-    effort."
+  - "I'm not here to insult you. I\u2019m not sure you\u2019re serious, but maybe
+    I\u2019m wrong. I need to see if you have the discipline. If not, when things
+    get tough, you'll give up. I won\u2019t work with someone who won\u2019t try."
+  - "Ah, I see. So I gotta prove myself to you first.\r"
   - "Alright, so what do I need to do?\r"
   - "Let\u2019s jam. If you\u2019ve got the drive, prove it and keep up with me.\r"
   portrait:
@@ -1004,14 +999,12 @@ MonoBehaviour:
   - Fine, fine. What seems to be bothering you? Maybe I can offer a note of advice.
   - "I\u2019m going to ignore that last one."
   - Just tell me what the problem is.
-  - "My performance just feels like it\u2019s missing something. I thought maybe
-    if I could form a group, that might give it that extra layer of sound it needs.
-    Unfortunately, I don\u2019t really know many people in town besides you, and
-    I only know you because you helped me get on my feet when I transferred here."
-  - "That does sound like a hold up. I wish I could help, but I\u2019m not sure what
-    everyone else\u2019s plans are for the festival. Best I can do is keep an eye
-    out and try and point someone in your direction. Any instruments you are looking
-    for in particular?"
+  - "Something's missing from my performance. I thought forming a group might add
+    the sound I need, but I don't know many people here\u2014except you, since you
+    helped me when I first arrived."
+  - "That sounds like a challenge. I wish I could help, but I\u2019m not sure what
+    everyone\u2019s plans are for the festival. I\u2019ll keep an eye out and send
+    anyone your way. Any specific instruments you\u2019re looking for?"
   - "Ummm I haven\u2019t really thought about it, but maybe someone on keytar would
     be a good idea? Wait, don\u2019t you play keytar?"
   - "Well, I do, but I\u2019ve never really been great with on stage performances."
